@@ -8,21 +8,21 @@ Base = declarative_base()
 # write the Role and Actor classes below
 
 class Actor(Base):
-    __tablename__ = 'actors'
+    __tablename__ = 'actor'
 
     id = Column(Integer, primary_key = True)
     name = Column(Text)
 
-    roles = relationship('Role', back_populates = 'actors')
+    roles = relationship('Role', back_populates = 'actor')
 
 class Role(Base):
     __tablename__ = 'roles'
 
     id = Column(Integer, primary_key = True)
     character = Column(Text)
-    actor_id = Column(Integer, ForeignKey('actors.id'))
+    actor_id = Column(Integer, ForeignKey('actor.id'))
 
-    actors = relationship('Actor', back_populates = 'roles')
+    actor = relationship('Actor', back_populates = 'roles')
 
 
 engine = create_engine('sqlite:///actors.db')

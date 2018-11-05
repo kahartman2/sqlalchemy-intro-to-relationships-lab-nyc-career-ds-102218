@@ -12,15 +12,22 @@ tom_hanks = Actor(name = 'Tom Hanks')
 gwyneth_paltrow = Actor(name = 'Gwyneth Paltrow')
 jennifer_anniston = Actor(name = 'Jennifer Anniston')
 
-forest_gump = Role(character = 'Forest Gump', actors = tom_hanks)
-jim_lovell = Role(character = 'Jim Lovell', actors = tom_hanks)
-woody = Role(character = 'Woody', actors = tom_hanks)
-robert_langdon = Role(character = 'Robert Langdon', actors = tom_hanks)
+tom_hanks.roles = [Role(character = 'Forrest Gump'), Role(character = 'Jim Lovell'), Role(character = 'Woody'), Role(character = 'Robert Langdon')]
+gwyneth_paltrow.roles = [Role(character = 'Pepper Potts'), Role(character = 'Margot Tenenbaum')]
+jennifer_anniston.roles = [Role(character = 'Rachel Green')]
 
-pepper_potts = Role(character = 'Pepper Potts', actors = gwyneth_paltrow)
-margot_tenenbaum = Role(character = 'Margot Tenenbaum', actors = gwyneth_paltrow)
+# forest_gump = Role(character = 'Forest Gump', actor = tom_hanks)
+# jim_lovell = Role(character = 'Jim Lovell', actor = tom_hanks)
+# woody = Role(character = 'Woody', actor = tom_hanks)
+# robert_langdon = Role(character = 'Robert Langdon', actor = tom_hanks)
 
-rachel_green = Role(character = 'Rachel Green')
+# pepper_potts = Role(character = 'Pepper Potts', actor = gwyneth_paltrow)
+# margot_tenenbaum = Role(character = 'Margot Tenenbaum', actor = gwyneth_paltrow)
+#
+# rachel_green = Role(character = 'Rachel Green')
 
-session.add_all([tom_hanks, gwyneth_paltrow, jennifer_anniston, forest_gump, jim_lovell, woody, robert_langdon, pepper_potts, margot_tenenbaum, rachel_green])
+# session.add_all([tom_hanks, gwyneth_paltrow, jennifer_anniston, forest_gump, jim_lovell, woody, robert_langdon, pepper_potts, margot_tenenbaum, rachel_green])
+# session.commit()
+
+session.add_all([tom_hanks, gwyneth_paltrow, jennifer_anniston])
 session.commit()
